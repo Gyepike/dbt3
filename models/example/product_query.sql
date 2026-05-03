@@ -1,5 +1,14 @@
 /*SELECT table_schema, table_name
 FROM information_schema.tables
-WHERE table_name ILIKE '%product%' */
+WHERE table_name ILIKE '%product%' 
+*/
 
-SELECT * FROM public."Product"
+--SELECT * FROM public."Product"
+/*
+SELECT table_schema, table_name
+FROM information_schema.tables
+WHERE table_name ILIKE '%product%'; */
+
+SELECT * FROM public.product
+
+
