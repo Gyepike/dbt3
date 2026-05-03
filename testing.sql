@@ -1,0 +1,1 @@
+SELECT 1 AS id, 'dbt + Neon working' AS status;
