@@ -20,3 +20,11 @@ CREATE TABLE customer (
 	  email TEXT,
       address TEXT 	  
 )
+
+INSERT INTO public.customer (customer_id, first_name, last_name, email, address)
+VALUES
+(1, 'John', 'Smith', 'john.smith@gmail.com', 'Budapest, Andrássy 1'),
+(2, 'Anna', 'Kovacs', 'anna.kovacs@gmail.com', 'Budapest, Király 12'),
+(3, 'Peter', 'Nagy', 'peter.nagy@gmail.com', 'Debrecen, Fő utca 5'),
+(4, 'Eva', 'Toth', 'eva.toth@gmail.com', 'Szeged, Kárász 8'),
+(5, 'Mark', 'Horvath', 'mark.horvath@gmail.com', 'Pécs, Király 20');
