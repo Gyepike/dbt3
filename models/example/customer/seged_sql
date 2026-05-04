@@ -1,0 +1,22 @@
+SELECT table_schema, table_name
+FROM information_schema.tables
+WHERE table_name ILIKE '%product%';
+
+
+CREATE TABLE product AS SELECT * FROM public."Product";
+
+
+CREATE TABLE public.product_dbt AS
+SELECT 1 AS id, 'apple' AS name, 100 AS price
+UNION ALL
+SELECT 2, 'banana', 200;
+
+
+
+CREATE TABLE customer (
+      customer_id INTEGER,
+	  first_name TEXT,
+	  last_name TEXT,
+	  email TEXT,
+      address TEXT 	  
+)
