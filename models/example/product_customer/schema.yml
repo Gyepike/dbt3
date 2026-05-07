@@ -9,7 +9,7 @@ models:
           - relationships:
               to: ref('stg_orders')
               field: id
-              
+
       - name: id
         tests:
           - not_null

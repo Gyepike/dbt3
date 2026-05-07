@@ -1,11 +1,10 @@
-with base as (
-SELECT O.ID, O.CUSTOMER_ID, DBT.NAME, DBT.PRICE
-FROM 
-{{ref("stg_orders")}} o 
-LEFT JOIN 
-{{ref("stg_product_dbt")}} dbt
-ON DBT.ORDER_ID = O.ID
-) 
+with
+    base as (
+        select o.id, o.customer_id, dbt.name, dbt.price
+        from {{ ref("stg_orders") }} o
+        left join {{ ref("stg_product_dbt") }} dbt on dbt.order_id = o.id
+    )
 
-SELECT *
-FROM base
+
+select * 
+from base

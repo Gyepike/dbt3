@@ -85,3 +85,27 @@ INSERT INTO public.orders VALUES
 (1, 1, 100),
 (2, 1, 200),
 (3, 2, 150);
+
+
+1. edit schema.yml
+2. FORMAT gomb
+3. dbt parse
+4. dbt test
+
+
+models
+  └─ model
+      └─ columns
+          └─ tests
+
+ models:                 0 spaces
+
+··- name:               2 spaces
+                         ^
+                         list item
+
+····columns:            4 spaces
+                         ^
+                         nested inside model
+
+······- name:           6 spaces */
