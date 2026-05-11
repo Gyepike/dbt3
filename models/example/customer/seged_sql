@@ -1,0 +1,111 @@
+SELECT table_schema, table_name
+FROM information_schema.tables
+WHERE table_name ILIKE '%product%';
+
+
+CREATE TABLE product AS SELECT * FROM public."Product";
+
+
+CREATE TABLE public.product_dbt AS
+SELECT 1 AS id, 'apple' AS name, 100 AS price
+UNION ALL
+SELECT 2, 'banana', 200;
+
+
+
+CREATE TABLE customer (
+      customer_id INTEGER,
+	  first_name TEXT,
+	  last_name TEXT,
+	  email TEXT,
+      address TEXT 	  
+)
+
+INSERT INTO public.customer (customer_id, first_name, last_name, email, address)
+VALUES
+(1, 'John', 'Smith', 'john.smith@gmail.com', 'Budapest, Andrássy 1'),
+(2, 'Anna', 'Kovacs', 'anna.kovacs@gmail.com', 'Budapest, Király 12'),
+(3, 'Peter', 'Nagy', 'peter.nagy@gmail.com', 'Debrecen, Fő utca 5'),
+(4, 'Eva', 'Toth', 'eva.toth@gmail.com', 'Szeged, Kárász 8'),
+(5, 'Mark', 'Horvath', 'mark.horvath@gmail.com', 'Pécs, Király 20');
+
+
+
+
+SELECT table_schema, table_name
+FROM information_schema.tables
+WHERE table_name ILIKE '%product%';
+
+
+CREATE TABLE product AS SELECT * FROM public."Product";
+
+
+CREATE TABLE public.product_dbt AS
+SELECT 1 AS id, 'apple' AS name, 100 AS price
+UNION ALL
+SELECT 2, 'banana', 200;
+
+
+
+CREATE TABLE public.orders (
+    id INT,
+    customer_id INT,
+    amount INT
+);
+
+
+
+INSERT INTO public.customer (customer_id, first_name, last_name, email, address)
+VALUES
+(1, 'John', 'Smith', 'john.smith@gmail.com', 'Budapest, Andrássy 1'),
+(2, 'Anna', 'Kovacs', 'anna.kovacs@gmail.com', 'Budapest, Király 12'),
+(3, 'Peter', 'Nagy', 'peter.nagy@gmail.com', 'Debrecen, Fő utca 5'),
+(4, 'Eva', 'Toth', 'eva.toth@gmail.com', 'Szeged, Kárász 8'),
+(5, 'Mark', 'Horvath', 'mark.horvath@gmail.com', 'Pécs, Király 20');
+
+
+
+CREATE TABLE customer (
+      customer_id INTEGER,
+	  first_name TEXT,
+	  last_name TEXT,
+	  email TEXT,
+      address TEXT 	  
+)
+
+
+
+CREATE TABLE public.orders (
+    id INT,
+    customer_id INT,
+    amount INT
+);
+
+INSERT INTO public.orders VALUES
+(1, 1, 100),
+(2, 1, 200),
+(3, 2, 150);
+
+
+1. edit schema.yml
+2. FORMAT gomb
+3. dbt parse
+4. dbt test
+
+
+models
+  └─ model
+      └─ columns
+          └─ tests
+
+ models:                 0 spaces
+
+··- name:               2 spaces
+                         ^
+                         list item
+
+····columns:            4 spaces
+                         ^
+                         nested inside model
+
+······- name:           6 spaces */
